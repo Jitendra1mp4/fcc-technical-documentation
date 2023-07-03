@@ -10,28 +10,29 @@
 </head>
 
 <body>
-    <nav id="navbar">
+    <div class="container">
+     <nav id="navbar">
         <header>
             <h1>A Complete Guide to Flexbox</h1>
             <p> This complete guide explains everything about flexbox, focusing on all the different possible properties
                 for the parent element (the flex container) and the child elements (the flex items). </p>
         </header>
         <ul>
-            <li><a href="#background" class="nav-link">Background</a></li>
-            <li><a href="#basics_and_terminology" class="nav-link">Basics and terminology</a></li>
-            <li><a href="#flexbox_properties" class="nav-link">Flexbox properties</a></li>
-            <li><a href="#prefixing_flexbox" class="nav-link">Prefixing Flexbox</a></li>
+            <li><a href="#Background" class="nav-link">Background</a></li>
+            <li><a href="#Basics_and_terminology" class="nav-link">Basics and terminology</a></li>
+            <li><a href="#Flexbox_properties" class="nav-link">Flexbox properties</a></li>
+            <li><a href="#Prefixing_flexbox" class="nav-link">Prefixing Flexbox</a></li>
             <!-- <li><a href="#examples" class="nav-link">Examples</a></li> -->
             <!-- <li><a href="#flexbox_tricks" class="nav-link">Flexbox tricks</a></li> -->
             <!-- <li><a href="#browser_support" class="nav-link">Browser support</a></li> -->
-            <li><a href="#bugs" class="nav-link">Bugs</a></li>
+            <li><a href="#Bugs" class="nav-link">Bugs</a></li>
             <!-- <li><a href="#related_properties" class="nav-link">Related properties</a></li> -->
             <!-- <li><a href="#more_information" class="nav-link">More information</a></li> -->
-            <li><a href="#more_sources" class="nav-link">More sources</a></li>
+            <li><a href="#More_sources" class="nav-link">More sources</a></li>
         </ul>
     </nav>
     <main id="main-doc">
-        <main-section id="background" role="region" aria-labelledby="heading_background">
+        <section class="main-section" id="Background" role="region" aria-labelledby="heading_background">
             <header>
                 <h2 id="heading_background">Background</h2>
             </header>
@@ -61,8 +62,8 @@
 
 
 
-        </main-section>
-        <main-section id="basics_and_terminology" role="region" aria-labelledby="heading_basics_and_terminology">
+        </section class="main-section">
+        <section class="main-section" id="Basics_and_terminology" role="region" aria-labelledby="heading_basics_and_terminology">
             <header>
                 <h2 id="heading_basics_and_terminology">Basics and terminology</h2>
             </header>
@@ -100,8 +101,8 @@
                     dimension, is the item’s cross size. The cross size property is whichever of ‘width’ or ‘height’
                     that is in the cross dimension.</li>
             </ul>
-        </main-section>
-        <main-section id="flexbox_properties" role="region" aria-labelledby="heading_flexbox_properties">
+        </section class="main-section">
+        <section class="main-section" id="Flexbox_properties" role="region" aria-labelledby="heading_flexbox_properties">
             <header>
                 <h2 id="heading_flexbox_properties">Flexbox properties</h2>
             </header>
@@ -118,9 +119,9 @@
                         context for all its direct children.
                     </p>
                     <code>
-                    .container {
+<pre>.container {
   display: flex; /* or inline-flex */
-}
+}</pre>
                 </code>
                     <p>
                         Note that CSS columns have no effect on a flex container.
@@ -140,9 +141,9 @@
                         flex items as primarily laying out either in horizontal rows or vertical columns.
                     </p>
                     <code>
-                        .container {
+<pre>.container {
   flex-direction: row | row-reverse | column | column-reverse;
-}
+}</pre>
                     </code>
                     <ul>
                         <li>row (default): left to right in ltr; right to left in rtl</li>
@@ -160,9 +161,11 @@
                         By default, flex items will all try to fit onto one line. You can change that and allow the
                         items to wrap as needed with this property.
                     </p>
-                    <code>.container {
+                    <code>
+<pre>.container {
   flex-wrap: nowrap | wrap | wrap-reverse;
-}</code>
+}</pre>
+</code>
                     <ul>
                         <li>nowrap (default): all flex items will be on one line </li>
                         <li>wrap: flex items will wrap onto multiple lines, from top to bottom. </li>
@@ -177,9 +180,9 @@
                         flex container’s main and cross axes. The default value is row nowrap.
                     </p>
                     <code>
-                        .container {
+<pre>.container {
   flex-flow: column wrap;
-}
+}</pre>
                     </code>
                 </div>
                 <div class="property-container">
@@ -192,26 +195,26 @@
                         line.
                     </p>
                     <code>
-                        .container {
+<pre>container {
   justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
-}
+}</pre>
                     </code>
                     <ul>
-                        <li><span class="monospace">flex-start</span> flex-start (default): items are packed toward the
+                        <li><span class="monospace">flex-start</span> (default): items are packed toward the
                             start of the flex-direction.</li>
-                        <li><span class="monospace">flex-end</span> flex-end: items are packed toward the end of the
+                        <li><span class="monospace">flex-end</span> : items are packed toward the end of the
                             flex-direction.</li>
-                        <li><span class="monospace">start</span> start: items are packed toward the start of the
+                        <li><span class="monospace">start</span> : items are packed toward the start of the
                             writing-mode direction.</li>
-                        <li><span class="monospace">end</span> end: items are packed toward the end of the writing-mode
+                        <li><span class="monospace">end</span> : items are packed toward the end of the writing-mode
                             direction.</li>
-                        <li><span class="monospace">left</span> left: items are packed toward left edge of the
+                        <li><span class="monospace">left</span> : items are packed toward left edge of the
                             container, unless that doesn’t make sense with the flex-direction, then it behaves like
                             start.</li>
-                        <li><span class="monospace">right</span> right: items are packed toward right edge of the
+                        <li><span class="monospace">right</span> : items are packed toward right edge of the
                             container, unless that doesn’t make sense with the flex-direction, then it behaves like end.
                         </li>
-                        <li><span class="monospace">center</span> center: items are centered along the line</li>
+                        <li><span class="monospace">center</span> : items are centered along the line</li>
                         <li><span class="monospace">space-between</span> space-between: items are evenly distributed in
                             the line; first item is on the start line, last item on the end line</li>
                         <li><span class="monospace">space-around</span> space-around: items are evenly distributed in
@@ -219,7 +222,7 @@
                             the items have equal space on both sides. The first item will have one unit of space against
                             the container edge, but two units of space between the next item because that next item has
                             its own spacing that applies.</li>
-                        <li><span class="monospace">space-evenly</span> space-evenly: items are distributed so that the
+                        <li><span class="monospace"></span> space-evenly: items are distributed so that the
                             spacing between any two items (and the space to the edges) is equal.</li>
                     </ul>
                     <p>
@@ -248,9 +251,9 @@
                         main-axis).
                     </p>
                     <code>
-                        .container {
+<pre>.container {
   align-items: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe;
-}                    </code>
+}</pre> </code>
                     <ul>
                         <li><span class="monospace">stretch</span>: stretch to fill the container (still respect
                             min-width/max-width)</li>
@@ -282,13 +285,13 @@
                         its default value, no-wrap) will not reflect align-content.
                     </p>
                     <code>
-                    .container {
+<pre>.container {
   align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;
-}                </code>
+}</pre>        </code>
                     <ul>
                         <li><span class="monospace">normal</span>(default): items are packed in their default position
                             as if no value was set.</li>
-                        <li><span class="monospace">flex-start / star</span>: items packed to the start of the
+                        <li><span class="monospace">flex-start / start</span>: items packed to the start of the
                             container. The (more supported) flex-start honors the flex-direction while start honors the
                             writing-mode direction.</li>
                         <li><span class="monospace">flex-end / end</span>: items packed to the end of the container. The
@@ -319,14 +322,14 @@
                         on the outer edges.
                     </p>
                     <code>
-                        .container {
+<pre>.container {
   display: flex;
   ...
   gap: 10px;
   gap: 10px 20px; /* row-gap column gap */
   row-gap: 10px;
   column-gap: 20px;
-}
+}</pre>
                     </code>
                     <p>
                         The behavior could be thought of as a minimum gutter, as if the gutter is bigger somehow
@@ -349,9 +352,9 @@
                         order in which they appear in the flex container.
                     </p>
                     <code>
-                        .item {
+<pre>.item {
   order: 5; /* default is 0 */
-}
+}</pre>
 
                     </code>
                     <p>
@@ -373,9 +376,9 @@
                         as much of the space either one of the others (or it will try, at least). Negative numbers are
                         invalid.</p>
                     <code>
-                        .item {
+<pre>.item {
   flex-grow: 4; /* default 0 */
-}
+}</pre>
                     </code>
                 </div>
                 <div>
@@ -385,9 +388,9 @@
                         Negative numbers are invalid.
                     </p>
                     <code>
-                        .item {
+<pre>.item {
   flex-shrink: 3; /* default 1 */
-}
+}</pre>
                     </code>
                 </div>
                 <div>
@@ -403,9 +406,9 @@
                         do.
                     </p>
                     <code>
-                        .item {
+<pre>.item {
   flex-basis:  | auto; /* default auto */
-}
+}</pre>
 
                     </code>
                     <p>
@@ -423,9 +426,9 @@
                         setting flex-grow: 5; flex-shrink: 1; flex-basis: 0%;.
                     </p>
                     <code>
-                        .item {
+<pre>.item {
   flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
-}
+}</pre>
                     </code>
                     <span class="bold">
                         It is recommended that you use this shorthand property
@@ -444,9 +447,9 @@
                         Please see the align-items explanation to understand the available values.
                     </p>
                     <code>
-                        .item {
+<pre>.item {
   align-self: auto | flex-start | flex-end | center | baseline | stretch;
-}
+}</pre>
                     </code>
                     <p>
                         Note that float, clear and vertical-align have no effect on a flex item.
@@ -454,8 +457,8 @@
                 </div>
             </article>
 
-        </main-section>
-        <main-section id="prefixing_flexbox" role="region" aria-labelledby="heading_prefixing_flexbox">
+        </section class="main-section">
+        <section class="main-section" id="Prefixing_flexbox" role="region" aria-labelledby="heading_prefixing_flexbox">
             <header>
                 <h2 id="heading_prefixing_flexbox">Prefixing Flexbox</h2>
             </header>
@@ -473,59 +476,58 @@
                 what kind of things need to be done:
             </p>
             <code>
-                @mixin flexbox() {
-                    display: -webkit-box;
-                    display: -moz-box;
-                    display: -ms-flexbox;
-                    display: -webkit-flex;
-                    display: flex;
-                  }
-                  
-                  @mixin flex($values) {
-                    -webkit-box-flex: $values;
-                    -moz-box-flex:  $values;
-                    -webkit-flex:  $values;
-                    -ms-flex:  $values;
-                    flex:  $values;
-                  }
-                  
-                  @mixin order($val) {
-                    -webkit-box-ordinal-group: $val;  
-                    -moz-box-ordinal-group: $val;     
-                    -ms-flex-order: $val;     
-                    -webkit-order: $val;  
-                    order: $val;
-                  }
-                  
-                  .wrapper {
-                    @include flexbox();
-                  }
-                  
-                  .item {
-                    @include flex(1 200px);
-                    @include order(2);
-                  }
+<pre>.item @mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+ }
+ 
+ @mixin flex($values) {
+   -webkit-box-flex: $values;
+   -moz-box-flex:  $values;
+   -webkit-flex:  $values;
+   -ms-flex:  $values;
+   flex:  $values;
+   }
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;     
+  -webkit-order: $val;  
+  order: $val;
+  }
+  
+  .wrapper {
+  @include flexbox();
+  }
+  
+  {
+  @include flex(1 200px);
+  @include order(2);
+  }</pre>
             </code>
-        </main-section>
-        <!-- <main-section id="examples" role="region" aria-labelledby="heading_examples">
+        </section class="main-section">
+        <!-- <section class="main-section" id="examples" role="region" aria-labelledby="heading_examples">
             <header>
                 <h2 id="heading_examples">Examples</h2>
             </header>
             <p></p>
-        </main-section> -->
-        <!-- <main-section id="flexbox_tricks" role="region" aria-labelledby="heading_flexbox_tricks">
+        </section class="main-section"> -->
+        <!-- <section class="main-section" id="flexbox_tricks" role="region" aria-labelledby="heading_flexbox_tricks">
             <header>
                 <h2 id="heading_flexbox_tricks">Flexbox tricks</h2>
             </header>
             <p></p>
-        </main-section> -->
-        <!-- <main-section id="browser-support" role="region" aria-labelledby="browser-heading_support">
+        </section class="main-section"> -->
+        <!-- <section class="main-section" id="browser-support" role="region" aria-labelledby="browser-heading_support">
             <header>
                 <h2 id="browser-heading_support">Browser support</h2>
             </header>
             <p></p>
-        </main-section> -->
-        <main-section id="bugs" role="region" aria-labelledby="heading_bugs">
+        </section class="main-section"> -->
+        <section class="main-section" id="Bugs" role="region" aria-labelledby="heading_bugs">
             <header>
                 <h2 id="heading_bugs">Bugs</h2>
                 <p>Flexbox is certainly not without its bugs. The best collection of them I’ve seen is Philip Walton and
@@ -533,20 +535,20 @@
                     open-source place to track all of them, so I think it’s best to just link to that.</p>
             </header>
             <p></p>
-        </main-section>
-        <!-- <main-section id="related_properties" role="region" aria-labelledby="heading_related_properties">
+        </section class="main-section">
+        <!-- <section class="main-section" id="related_properties" role="region" aria-labelledby="heading_related_properties">
             <header>
                 <h2 id="heading_related_properties">Related properties</h2>
             </header>
             <p></p>
-        </main-section> -->
-        <!-- <main-section id="more_information" role="region" aria-labelledby="heading_more_information">
+        </section class="main-section"> -->
+        <!-- <section class="main-section" id="more_information" role="region" aria-labelledby="heading_more_information">
             <header>
                 <h2 id="heading_more_information">More information</h2>
             </header>
             <p></p>
-        </main-section> -->
-        <main-section id="more_sources" role="region" aria-labelledby="heading_more_sources">
+        </section class="main-section"> -->
+        <section class="main-section" id="More_sources" role="region" aria-labelledby="heading_more_sources">
             <header>
                 <h2 id="heading_more_sources">More sources</h2>
             </header>
@@ -569,10 +571,12 @@
                 <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-prefixing-flexbox"></a>( Css
                     Tricks)</li>
             </ul>
-        </main-section>
-    </main>
+        </section class="main-section">
+    </main>    
+    </div>
+   
     <footer>
-        <p>This whole information is po</p>
+        <p>This whole information is directly from <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS-Tricks Blog</a> </p>
     </footer>
 </body>
 
