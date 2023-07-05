@@ -136,10 +136,10 @@ footer {
   #main-doc {
     position: relative;
     width: 70vw;
-    max-width : unset ;
-    right: 1%;
+    max-width: unset;
+    left: 13vw;
     top: 5%;
-  }
+}
   #navbar {
     width: 28vw;
     position: fixed;
