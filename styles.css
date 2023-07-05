@@ -131,7 +131,6 @@ footer {
 @media screen and (min-width: 700px) {
   .container {
     display: flex;
-    /* gap : 6% ; */
   }
   #main-doc {
     position: relative;
@@ -139,7 +138,7 @@ footer {
     max-width: unset;
     left: 13vw;
     top: 5%;
-}
+  }
   #navbar {
     width: 28vw;
     position: fixed;
